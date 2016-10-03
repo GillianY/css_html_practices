@@ -1,0 +1,53 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>CSS Selector</title>
+        <style type="text/css">
+			/*inline > id > class > type > inherit*/
+			body{color:gray;font-size:3em;}
+			div{color:red;} 
+			div div{color:blue;}  
+			div div div {color:green;} /**/
+			/*011*/
+			.innerClass {color:purple;} /*010*/
+			
+			body .outerClass  {color: yellow;} /*012*/
+			
+			/*
+			.outerClass div div {color:red;}
+			body .middleClass div {color:cyan;} 
+			body .innerClass {color:purple;} /* no show; 011 less than the upper 012  */
+			/*body .outerClass div  {color: black;}  /* yellow,black,black cover inner !!! */ 
+			
+			.middleClass div {color:cyan;} 
+			body .innerClass {color:purple;}
+			
+			
+			/*body{color:gray;font-size:3em;}
+			div{color:red;}
+			div div{color:green;}
+			div div div{color:blue;}
+			.outerClass div{color:cyan;}
+			.innerClass{color:purple;}
+			.outerClass{color:orange;}
+			body .outerClass div{color:magenta;}
+			.outerClass div div{color:yellow;}
+			div div .middleClass{color:blue;}
+			#middleId{color:navy;}
+			#outerId .innerClass{color:tomato;}
+			*/
+
+        </style>	
+   </head>
+	
+	<body>
+		<div id="outerId" class="outerClass">outer
+            <div id="middleId" class="middleClass">middle
+            	<div id="innerId" class="innerClass">inner</div>
+            </div>
+        </div>
+	</body>
+</html>
+5
