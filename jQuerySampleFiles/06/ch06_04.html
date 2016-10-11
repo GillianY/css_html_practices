@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>jQuery</title>
+       
+        <style type="text/css">
+            html {
+                background-color: black;
+                font: 70% Verdana;
+                color: #ACACB0
+            }
+            
+            .title {
+                background-color: #FF9900;
+                color: black
+            }
+            
+            .myeven {
+                background-color: #CDCDFC;
+                font-family: Verdana, "Courier New";
+                font-size: .93em;
+                color: black
+            }
+            
+            .myodd {
+                background-color: #FFD393;
+                font-family: Verdana, "Courier New";
+                font-size: .93em;
+                color: black
+            }
+            
+        </style>
+
+        <script type="text/javascript" src="../jquery.js"></script>
+		<script type="text/javascript">
+		    $(document).ready(init);
+			function init()
+			{
+                $.ajax({type:'GET', url:'books.xml', success:successHandler, dataType:"xml"});
+            }
+			
+			function successHandler(data){
+				//alert(data);//object Document
+				$("book", data).each(eachFunction);
+			}
+			var bookNum=1;
+			function eachFunction(){
+				//jQuery( selector [, context] )
+				var bookTitle = $("title", this).text();	
+				var bookAuthor = $("author", this).text();
+				var bookPublisher = $("publisher", this).text();
+				var bookIsbn = $("isbn", this).text();
+				
+				
+				$("body").append(bookNum+".<br/>"+bookTitle +"<br/>"+bookAuthor+"<br/>"+bookPublisher+"<br/>"+bookIsbn+"<br/><br/>");
+				bookNum++;
+			}
+			
+
+
+		/*
+		
+		$(document).ready(init);
+		function init()
+		{
+		 //$.ajax({type:'GET',url:'books.xml',success:successHandler,dataType:"xml"});
+		 $.ajax({type:'GET', url:'books.xml', success:successHandler, dataType:"xml"});
+	}
+		
+		function successHandler(data)
+		{ alert(data);
+			//$("book",data).each(eachfunction);
+		}
+		var bookNum =1; 
+		function eachfunction()
+		{
+			//alert( $("title",this).text());
+			
+		
+			var title = $("title",this).text();
+			var author =$("author",this).text();
+			var publisher = $("publisher",this).text();
+			var isbn =$("isbn",this).text();
+			
+			$("body").append( bookNum +".<br/>"+title+"<br/>"+author+"<br/>"+publisher+"<br/>"+isbn+"<br/><br/>"
+			);	
+			bookNum++;
+			
+			} 	
+			*/
+			/*
+	<book>
+		<title>Shadow Dance: A Novel</title>
+		<author>Julie Garwood</author>
+		<publisher>Ballantine Books</publisher>
+		<isbn>0345453867</isbn>
+	</book>
+			*/
+		
+		</script>  
+    </head>
+    <body>
+        <!--center/>
+            <h1>Books XML Test <img src="ajaxloader.gif" id="loading" style="display:none"/></h1>
+            <table border="0" id="maintable" cellspacing="0" cellpadding="5">
+            </table-->
+            </body>
+        </html>

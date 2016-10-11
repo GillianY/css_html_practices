@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>CSS List</title>
+	<style type="text/css">
+		body{
+			background:#aaa;
+			margin:0px;
+		}
+		a{text-decoration:none;}
+		a:link{color:white;}
+		a:visited{color:yellow;}
+		a:hover{color:green;}
+		a:active{color:orange;}
+		
+		.testdiv{
+			background:#666;
+			height:30px;
+			padding:10px;
+		}
+		
+		.testdiv ul{
+			list-style:none;
+			margin:0px;
+		}
+		.testdiv ul li{
+			float:left;
+			padding:0px 10px;
+			border-left:1px solid white;
+		}
+		.lastLi{
+			border-right:1px solid white;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="testdiv">
+	  <ul>
+		<li><a href=#>Home</a></li>
+		<li><a href=#>Products</a></li>
+		<li><a href=#bb>Service</a></li>
+		<li class="lastLi"><a href=#cc>Support</a></li>
+		<!--li><a href="http://www.google.com" target="_blank">Google</a></li>
+		<li><a href="http://www.google.com" target="_self">Google</a></li-->
+	  </ul>
+	</div>
+    
+<span id="aaa">aaa</span>    
+<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+<span id="bbb">bbb</span> <a href="#aaa">Home</a>     
+<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+<span id="ccc">ccc</span><a href="#aaa">Home</a>    
+<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+</body>
+</html>

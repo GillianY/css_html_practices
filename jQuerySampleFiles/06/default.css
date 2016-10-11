@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* CSS Document */
+body{
+	background:#999;
+}
+
+fieldset{
+	background:#9C6;
+	padding:10px;
+	width:600px;
+	margin:10px auto;
+}
+
+label{
+	display:block;
+	width:100px;
+	float:left;
+}
+
+.response{
+	background:#900;
+	color:#FFF;
+	width:600px;
+	margin:0 auto;
+	padding:5px;
+	border:1px dotted white;
+}

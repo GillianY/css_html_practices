@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>CSS Selector</title>
+        <!-- MARKED-->
+        <style type="text/css">
+			/*TYPE SELECTOR OR TAG SELECTOR */
+			body{
+				color:blue;
+				/*background-color:yellow;*/
+			}			
+        </style>
+        
+        <style>
+		
+		/*  TYPE > INHERIT   
+		SO P IS DEPPER THAN BODY, IT SHOWS ITS OWN  SETTING COLOR  */
+			#my-class-1 { color:#99C } 
+			p{	color:#CFF
+				}	
+			body{
+				color:pink;
+				}
+			.myClass {
+				
+				color:#69C;
+				}
+			.myClass2 { 
+				color:#F96
+				} 	
+			
+			/* 強度相同的時候後覆蓋前*/
+			/*class 順序以style 中為主*/
+			/*#id>.class >type > inherit*/
+		</style>
+	</head>
+	
+	<body>
+		<p>This is a p!</p>
+		<p class="myClass">This is a p!</p>
+		<div id ="my-class-1">This is a div!</div>
+		<div class="myClass">This is a div!</div>
+		<span>This is a span!</span>
+		<span class="myClass">This is a span!</span>
+		<span class="myClass2 myClass">This is a span!</span>	
+	</body>
+</html>

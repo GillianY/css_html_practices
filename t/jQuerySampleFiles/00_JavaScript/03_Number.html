@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript</title>
+
+<script type="text/javascript">
+/*var a=1;
+document.write("a="+a+"<br>");//隱性轉型
+document.write("a="+String(a)+"<br>");//顯性轉型　強迫轉型
+document.write("a="+1+2+"<br>");//顯性轉型　強迫轉型
+document.write(String(1+2)+"<br>");//顯性轉型　強迫轉型
+document.write("a="+3*2+"<br>");//顯性轉型　強迫轉型
+
+var a=1;
+a=-1;
+a=3.5;
+a=-3.5;
+a="3";
+document.write("a="+typeof(a)+"<br>");
+a= Number("3");
+document.write("a="+typeof(a)+"<br>");
+
+
+a=Number("-3.3");//-3.3
+a=Number("-3.3abc");//NaN: Not a Number
+a=Number("abc-3.3");//NaN
+a=Number("");//0
+a=Number(" ");//0
+a=Number(" 3.3 ");//3.3
+
+
+a=parseFloat(3.3);
+a=parseFloat("3.3");//3.3
+a=parseFloat("3.3a");//3.3
+a=parseFloat("a3.3");//NaN
+
+a=parseInt(3.3);//3
+a=parseInt("3.3");//3
+a=parseInt("3.3a");//3
+a=parseInt("a3.3");//NaN
+a=parseInt("");//NaN
+a=parseInt(" ");//NaN
+a=parseInt(" 3 ");//3
+document.write("a="+typeof(a)+"<br>");
+
+
+a = 31;//十進位
+a = 031;//八進位
+a=0x31;//十六進位
+document.write("a="+a+"<br>");
+
+
+
+var b;
+document.write("b="+b+"<br>");//undefined
+b=b+1;
+document.write("b="+b+"<br>");
+*/
+</script>
+</head>
+
+<body>
+<span id="s1">3</span>+<span id="s2">5</span>=<span id="s3">?</span>
+</body>
+</html>
+<script type="text/javascript">
+/*
+	var s1 = Number(document.getElementById("s1").innerHTML);
+	var s2 = Number(document.getElementById("s2").innerHTML);
+	document.getElementById("s3").innerHTML=s1+s2;
+*/
+document.getElementById("s3").innerHTML=Number(document.getElementById("s1").innerHTML)+Number(document.getElementById("s2").innerHTML);
+
+</script>
+
+

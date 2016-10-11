@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css"> 
+
+</style>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript">
+
+$(document).ready(initHandler); // do init while document is ready 
+function initHandler()
+{
+	$("#myId").click(clickHandler);
+	$(".myClass").click(clickHandler2);
+	}
+
+
+function clickHandler()
+{alert("clicked!");}
+	
+function clickHandler2()
+{alert("clicked!22");}
+
+
+</script> 
+</head>
+
+<body>
+<button id="myId">Button <img src="../images/submit.png"/></button><br>
+<button class="myClass">Button <img src="../images/submit.png"/></button><br>
+<button class="myClass">Button <img src="../images/submit.png"/></button><br>
+<input type="button" value="Button input"></input>
+
+</body>
+
+
+</html>

@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background:black;
+	padding:o;
+	margin:0;
+}
+
+#searchBar{
+	background:#EEE;
+	padding:30px 15px;
+	width:190px;
+}
+
+#searchBar input{
+	border:#999 1px solid;
+	font:12px Verdana, Geneva, sans-serif;
+}
+
+#status{
+	display:none;
+}
+
+#result{
+	width:350px;
+	display:none;
+	background:#999;
+}
+
+.content{
+	background:white;
+	font:12px Verdana, Geneva, sans-serif;
+	margin:0;
+	padding:5px;
+}
+
+.content:hover{
+	background:#DDD;
+}
+
+.content label{
+	font-weight:bold;
+	margin:0;
+}
+
+.content p{
+	margin:0;
+	padding:5px;
+}
+
+.content img{
+	float:left;
+	margin-right:10px;
+	width:40px;
+}
+
+.footer{
+	padding:4px;
+	font-weight:bold;
+}
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+   div{
+	   white-space:pre;
+	   font-family:monospace;
+	   font-size:10px;
+	   }
+	   
+	table{
+		 border:2px black soild;
+		 border-collapse:collapse; 
+		}   
+	.class1{
+			background:#FCC;
+		}
+	.class2{
+			background:#AAA;
+		}	   
+	   
+</style>
+
+
+<script type="text/javascript">
+//var data1 = {'_0':"test1",'_1':"test2","_2":3};
+var data2 = ["ddd","asdf",0,234];
+for(var obj in data2)
+{ //document.write( obj+ ":"+data2[obj]+"<br>");
+}
+
+/*
+var num = 9;
+
+var output ="<div>";
+for(var i=1; i<=num ;i++ )
+{
+	for(var j=1;j<=num;j++ )
+	{
+		output+= i+"*"+j+"="+(i*j<10?" ":"")+ i*j +"\t"; 	
+		}
+	output +="<br>"; 	
+	}
+	output+="</div>";
+document.write(output);
+*/
+
+
+var num = 9;
+
+var output ="<div><table>";
+for(var i=1; i<=num ;i++ )
+{
+	output +="<tr class='"+ ((i%2==0)?"class1":"class2" ) +"'>"; 
+	for(var j=1;j<=num;j++ )
+	{
+		output+="<td>"+i+"*"+j+"="+(i*j<10?" ":"")+ i*j +"</td>"; 	
+		}
+	output +="</tr>"; 	
+	}
+	output+="</table></div>";
+	
+	
+document.write(output);
+</script>
+</head>
+
+<body>
+</body>
+</html>

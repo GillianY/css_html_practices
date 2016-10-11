@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript</title>
+
+<script type="text/javascript">
+var x=5;
+var y=0;
+
+document.write("result="+(y>1 && x>1)+"<br>");//&& and 全部為真方為真
+document.write("result="+(x>1 || y>1)+"<br>");//|| or 任一為真即為真
+document.write("result="+(x>1 || y>1 && x<y)+"<br>");//&& 優先於 ||
+document.write("result="+((x>1 || y>1) && x<y)+"<br>");//&& 優先於 ||
+/*
+document.write("result="+(1 & 2)+"<br>");//0
+document.write("result="+(1 | 2)+"<br>");//3
+
+document.write("result="+(3 & 5)+"<br>");//1
+document.write("result="+(3 | 5)+"<br>");//7
+
+
+document.write("result="+(8 >> 2)+"<br>");//2
+document.write("result="+(8 << 1)+"<br>");//16
+*/
+</script>
+</head>
+
+<body>
+</body>
+</html>
+

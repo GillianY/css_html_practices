@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+
+<script type="text/javascript">
+
+var output="";
+var ar = new Array(2,4,6,8,9);
+ar[8]="cat";
+
+output="ar:"+ar +"<br>";
+output="ar:"+ar +"<br>";
+output+="splice els:"+ar.splice(1,2) +"<br>"; // start from1 ,delete 2 items
+output+="ar:"+ar+"<br>";
+output+="splice els:"+ar.splice(1,0,"dog",10000) +"<br>"; // start from1 ,insert the upcomeing items
+output+="ar:"+ar+"<br>";
+ 
+document.write( output);
+
+//hello("dog","cat",false,123);
+function hello(){
+	for(var obj in arguments)
+	{
+		//arguemts[] : key 為 String 
+		 document.write("index:"+obj+"_typeof index:"+typeof(obj)+"_value:"+arguments[obj]+"<br>");
+	}
+}
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

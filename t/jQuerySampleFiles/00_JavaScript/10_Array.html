@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+//var ar = new Array(2,4,6,8);
+var ar = [2,4,6,8];
+document.write("ar="+ar+"<br>");
+document.write("ar.length="+ar.length+"<br>");
+document.write("ar[1]="+ar[1]+"<br>");
+ar[1]="cat";
+document.write("ar="+ar+"<br>")
+document.write("return: "+ar.splice(1,2)+"<br>");//ar.splice(起始號碼,刪除長度);
+document.write("ar="+ar+"<br>");
+document.write("return: "+ar.splice(1,0,"dog",9)+"<br>");//ar.splice(起始號碼,0,插入資料);
+document.write("ar="+ar+"<br>");
+
+
+//var obj=new Object({a:1,b:2});
+var obj={a:1,b:2};
+
+document.write("obj="+obj+"<br>");
+document.write("obj.a="+obj.a+"<br>");
+obj.b="cat";
+document.write("obj.b="+obj.b+"<br>");
+</script>
+</head>
+
+<body>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery Filter</title>
+<style type="text/css">
+div{
+	width:100px;
+	height:50px;
+	border:1px solid gray;
+	padding:10px;
+	background:#666;
+	color:white;
+}
+
+</style>
+
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(init);
+function init()
+{
+	//alert($("div").size());//3.0不支援
+	//alert($("div").length);
+	
+	//alert($("#target")); //Object Obejct   jquery
+	//alert(document.getElementById("target")); //object HTMLDivElement -> js
+	//alert($("#target").html());//jQuery 物件使用jQuery 指令
+	//alert(document.getElementById("target").innerHTML);//JS 物件使用JS 指令
+	
+	//alert($("#target").get(0).innerHTML);//由jQuery物件轉換成JS物件
+	//alert($("#target")[0].innerHTML);//由jQuery物件轉換成JS物件，使用JS指令
+	//alert($(document.getElementById("target")).html());///由JS物件轉換成jQuery物件，使用jQuery指令
+	
+	$("<div>This is a new div</div>").appendTo("body");
+
+	alert( $("div:eq(2)")[0].index());  // 2
+	alert( $("div:eq(2)")[0].innerHTML); //div3 
+
+}
+</script>  
+</head>
+
+<body>
+	<div>This is a div1</div>
+	<div id="target">This is a div2</div>
+	<div>This is a div3</div>
+	<div>This is a div4</div>
+	<div>This is a div5</div>
+</body>
+</html>

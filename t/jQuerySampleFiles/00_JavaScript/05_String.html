@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript</title>
+
+<script type="text/javascript">
+var a="abc";
+a='xyz';
+a="abc"+"xyz";
+a="午安";
+a="Tom's book";
+a='Tom\'s book which is \"The king!\"';//跳脫符號
+a="ab\tcd\nefg";//\t tab \n new line
+
+var n=123;
+a=String(n);
+a=n.toString();
+//document.write("a="+typeof(a)+"<br>");
+
+
+a="為他人減少煩惱是慈悲，為自己減少煩惱是智慧。";
+document.write("a="+a+"<br>");
+document.write("a.length="+a.length+"<br>");
+document.write("a.charAt(3)="+a.charAt(3)+"<br>");
+document.write("a.slice(2,4)="+a.slice(2,4)+"<br>");//slice(起始號碼,結束號碼)
+document.write("a.indexOf(\"減\")="+a.indexOf("減")+"<br>");//搜尋
+document.write("a.indexOf(\"減\",0)="+a.indexOf("減",0)+"<br>");//搜尋
+document.write("a.indexOf(\"減\",4)="+a.indexOf("減",4)+"<br>");//搜尋
+document.write("a.indexOf(\"減\",15)="+a.indexOf("減",15)+"<br>");//-1沒有找到
+
+document.write("a.indexOf(\"減少\",0)="+a.indexOf("減少",0)+"<br>");//搜尋
+document.write("a.indexOf(\"減無\",0)="+a.indexOf("減無",0)+"<br>");//搜尋
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>
+

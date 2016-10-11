@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript">
+
+	//jQuery("選取器").功能(傳入值);
+	$(document).ready(init);
+	function init(){
+		$("#myId").click(clickHandler);
+	}
+	function clickHandler(){
+		alert("Clicked!");
+	}
+
+	
+/*	
+	$(document).ready(
+		function (){
+			$("#myId").click(
+				function (){
+					alert("Clicked!");
+				}
+			);
+		}
+	);
+	*/
+</script>
+
+</head>
+
+<body>
+<button id="myId">button<img src="../images/submit.png" /></button><br>
+<button class="myClass">button<img src="../images/submit.png" /></button><br>
+<button class="myClass">button<img src="../images/submit.png" /></button><br>
+<!--input type="button" value="button"/><br>
+<input type="text" /><br>
+<input type="password" /><br-->
+</body>
+</html>

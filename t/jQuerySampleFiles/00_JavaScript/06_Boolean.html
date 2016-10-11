@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript</title>
+
+<script type="text/javascript">
+var a=true;
+a=false;
+a=Boolean(1);
+a=Boolean(0);//0為false其餘皆為true
+a=Boolean("abc");
+a=Boolean("");//空字串為false其餘皆為true
+a=Boolean(NaN);//false
+a=Boolean(undefined);//false
+a=Boolean(null);//false
+a=true;
+a=!true;//not 反相
+//document.write("a="+typeof(a)+"<br>");
+document.write("a="+a+"<br>");
+
+var x = 5;
+var y = "5";
+var z = 3;
+document.write("result="+(x==y)+"<br>");
+document.write("result="+(x===y)+"<br>");//絕對比較
+document.write("result="+(x!=y)+"<br>");//false
+document.write("result="+(x!==y)+"<br>");//true
+//  < <= == === != !== > >=
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
