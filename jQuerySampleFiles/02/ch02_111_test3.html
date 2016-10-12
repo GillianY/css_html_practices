@@ -13,14 +13,14 @@
 		$(".myMenu a").click(aHandler);
 	}
 	function aHandler(){
-		$(this).parent().children("ul").slideDown(200);
-		$(this).parent().siblings().find("ul").slideUp(200);
-		if($(this).parent().children("ul").length==0){
-			$("#info").text($(this).text());
-			$(".myMenu ul").slideUp(200);
-		}
+			$(this).parent().children("ul").slideDown(500);
+			$(this).parent().siblings().find("ul").slideUp(500);
+			if($(this).parent().children("ul").length==0)
+			{
+				$("#info").text( $(this).text() );
+				$(".myMenu ul").slideUp(200);
+				}
 	}
-
 	</script>
 	<style>
 		.myMenu{
@@ -59,17 +59,17 @@
   <li>	<a href="#">Contax</a></li>
   <li>	<a href="#">Canon</a>
     	<ul>
-      	<li><a href="#">Camera</a>
-        <ul>
-            <li><a href="#">Digital</a></li>
-            <li><a href="#">Film</a></li>
-        </ul>
-      	</li>
-      	<li><a href="#">Lens</a>
-        <ul>
-            <li><a href="#">EF Mount</a></li>
-            <li><a href="#">FD Mount</a></li>
-        </ul>
+      		<li><a href="#">Camera</a>
+        		<ul>
+            		<li><a href="#">Digital</a></li>
+            		<li><a href="#">Film</a></li>
+        		</ul>
+      		</li>
+      		<li><a href="#">Lens</a>
+        	<ul>
+            	<li><a href="#">EF Mount</a></li>
+            	<li><a href="#">FD Mount</a></li>
+        	</ul>
       </li>
       <li><a href="#">Flash</a></li>
     </ul>
