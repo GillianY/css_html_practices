@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>History</title>
+<style>
+a{
+	text-decoration:none;
+	padding:5px;
+}
+
+a:hover{
+	background:red;
+	color:white;
+}
+</style>
+
+<script type="text/javascript">
+
+var data = {User1:{name:"anistar", age:18}, 
+			User2:{name:"john", age:20}, 
+			User3:{name:"mary", age:32}, 
+			User4:{name:"kitty", age:45}};
+
+window.addEventListener("load", init);
+function init()
+{
+	if(history.pushState)
+	{
+		document.getElementById("status").innerHTML = "HTML5 History API available";
+	}
+	document.getElementById("examples").addEventListener("click", clickHandler);
+	//按鈕行為註冊
+		
+}
+function backHandler()
+{
+
+}
+
+function forwardHandler()
+{
+	
+}
+
+function clickHandler(e)
+{
+	e.preventDefault();
+	if(e.target.nodeName == "A")
+	{
+		var title = e.target.innerHTML;
+		var url = e.target.getAttribute("href");
+		history.pushState(data[title], title, url);
+		//歷史紀錄更新
+		
+	}
+}
+
+//歷史紀錄更新
+function updateHistory()
+{
+
+}
+
+function popstateHandler()
+{
+	
+}
+
+</script>
+
+</head>
+
+<body>
+
+<article>
+  <p id="status">HTML5 History API not supported</p>
+  <p>Use the back and forward buttons in your browser to navigate the history.</p>
+  <ul id="examples">
+    <li><a href="first">User1</a></li>
+    <li><a href="second">User2</a></li>
+    <li><a href="third">User3</a></li>
+    <li><a href="fourth">User4</a></li>
+  </ul>
+  <div id="output"></div>
+</article>
+
+</body>
+</html>
