@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>mousemove</title>
+        
+        <style type="text/css">
+            html {
+                color: white;
+                background-color: #2f2a3e;
+                font: normal 76% "Arial", "Trebuchet MS", "Lucida Grande", Verdana, Sans-Serif;
+            }
+        </style>
+
+        <script type="text/javascript" src="../jquery.js"></script>
+		<script type="text/javascript">
+		var moveAr=[];
+		$(document).ready(init);
+		function init()
+		{
+			$(document).on("mousemove",moveHandler);
+			$(document).click(clickHandler);
+		}
+		function moveHandler(e){
+			$("#myPanel").offset({left:e.pageX,top:e.pageY});
+			moveAr[moveAr.length]=[e.pageX,e.pageY];
+		}
+		var index =0;
+		function clickHandler(){
+			$(document).off("mousemove",moveHandler);
+			console.log(moveAr);
+			setInterval(run,20);
+		}
+		function run(){
+			$("#myPanel").offset({left:moveAr[index][0],top:moveAr[index][1]});
+			index++;
+		}
+		
+		</script>  
+    </head>
+    <body>
+    	<div id="myPanel">
+            x:<input type="text" size="20" name="x"/>
+            <br/>
+            y:<input type="text" size="20" name="y"/>
+
+        </div>
+    </body>
+</html>
