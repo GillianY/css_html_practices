@@ -4,30 +4,49 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CSS Font</title>
 	<style type="text/css">
+	
 		body{
 				margin:0px;
 				background:#CFF;
 			}
+			
 		.example{
 			margin:0px auto;
+			margin-button:0px;
 			width:500px;
 			height:600px;
 			background:#006;			
 			color:#FFC;
 			font-size:20px;
-			font-weight:900;
+			font-weight:300;
 			font:16px/2 Georgia;
 			font-variant:small-caps;
 			position:absolute;
 			top:50px;
 			left:50px;
+			border:yellow 5px solid;
 			}
+			
+			
+			div,p{
+				
+				margin:0px;
+				padding:0px;
+				}
+				
+			div{background:#99C;
+				}
+				
+				
+			
 		h1{
-			width:500px;
-			margin:50px 0px 0px 0px;
+			width:400px;
+			margin:10px auto ;
 			background:pink;
 			font-size:4em;
-			}	
+			border: white 3px dotted;
+			}
+				
 		.font1{
 			margin:0px 0px 0px 0px;
 			color:cyan;
@@ -39,13 +58,36 @@
 			.font2{
 			margin:0px 0px 0px 0px;
 			color:lightgreen;
+			position:fixed;
+			top:500px;
+			left:100px;
 			}
 			
+			
+			#hr01{
+				top:0px;
+				left:50px;
+				position:relative;
+				}
 			.outer1{
-				background:yellow;
+				background:cyan;
+				border:white 3px dotted;
+				height:80px;
+				width:300px;
+				margin:0px 0px 0px 0px;
+				position:relative;
+				top:50px;
+				left:100px;
 				
-				width:500px;
-				margin:50px 0px 0px 0px;
+				}
+				
+				.outer2{
+				background:pink;
+				border:white 3px dotted;
+				height:80px;
+				width:300px;
+				margin:0px;
+				
 				
 				}
 			
@@ -61,10 +103,18 @@
 	  <div>
 		<p class="font1"> Now, this is very much a he-snapped/he-snapped situation; it's easy to see Daly's side of things here. You play like garbage, the last thing you want to deal with is some Aussie paparazzi-wannabe shoving his little digital camera in your face. "I was looking to take a drop and a camera was 6 inches away from my face," Daly said in a statement after the round. </p>
 		<p class="font2"> We don't go out of our way to find stories that make John Daly look bad. Really, I swear. They just kind of drop in our laps, like this newest one: in Australia on Thursday, Daly didn't exactly take kindly to being photographed. Daly, finishing out an ugly 6-over 78 at the Australian Open that likely took him out of cut contention, grabbed the guy's camera and smashed it into a tree. </p>
-         <div class="outer1">test
-     </div>
+        <hr>
+         <div class="outer1">test realtive
+     	 </div>
+         <div class="outer2">normal rendering flow
+     	 </div>
 	  </div>
-         <hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr />
+      
+      
+      
+         <hr id="hr01" /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr />
 	</div>
+    
+    
 </body>
 </html>

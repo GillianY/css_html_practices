@@ -9,7 +9,23 @@
 				background-color:#999;
 				width:300px;
 				height:200px;
+				display:block;
 				
+				}
+			.span1{
+				background-color:pink;
+				display:inline;
+				width:200px; /* inline : width hight invalid*/
+				height:100px;
+				position:relative;
+				top:-20px;
+				left:-50px; /*jump out from randering flow*/
+				}
+			.span2{
+				background-color:lightgreen;
+				display:block;
+				width:200px;
+				height:100px;
 				}
 		
 		</style>
@@ -19,5 +35,8 @@
 		  width:200px <br>
 		  height:200px<br>
 		</div>
-	</body>
+        <span class="span1"> this is span1</span>
+	    <span class="span2"> this is span2</span>
+	
+    </body>
 </html>

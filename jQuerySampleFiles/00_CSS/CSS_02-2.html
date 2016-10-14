@@ -6,14 +6,27 @@
         <link ref="default.css" rel="stylesheet" type="text/css"> 
 		<style type="text/css">
 			body{ margin: 0px;}
-			div{width: 70%; background-color:#9FF;}
+			div{
+				border:gray 3px dotted;
+				}
+			.outterdiv{ width:500px;
+				margin:auto;	
+				}
+			.testdiv{width: 70%; background-color:#9FF;}
+			
 			img{width:50%;}		
 		</style>
 	</head>
 	<body>
-		<div class="testdiv">
-			<img src="images/adv1.jpg"/>
+    <div clasas="outterdiv">
+   		<div class="testdiv">
+			<img src="images/adv1.jpg"/> <!--0.7*0.5 = 0.35-->
 		</div>
+        <div >
+			<img src="images/adv1.jpg"/> <!--0.5-->
+		</div>
+    </div>
+   
         <img src="images/adv1.jpg"/> 
 	</body>
 </html>
