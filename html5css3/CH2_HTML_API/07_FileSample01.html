@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>File</title>
+
+<style>
+
+#status{
+	padding:5px;
+	font:14px/1.5 Arial, Helvetica, sans-serif;
+}
+
+#preview{
+	width:128px;
+	background:#EEE;
+	padding:10px;
+	border:1px solid #333;
+	display:none;
+}
+
+</style>
+<script>
+var file = undefined;
+var reader = undefined;
+window.addEventListener("load", init);
+
+function init()
+{
+	file=document.getElementById("fileInput");
+	file.addEventListener("change",fileChangeHandler);
+	reader=new FileReader();
+	reader.addEventListener("load",loadendHandler);
+}
+
+function fileChangeHandler()
+{
+	//file//input element
+	//file.files//fileList:Array
+	//file.files[0]//file
+	if(file.files.length>0){
+		var selectedFile=file.files[0];
+		var message="File Name:"+selectedFile.name+"<br>";
+		message+="File Size:"+selectedFile.size+"<br>";
+		message+="File Type:"+selectedFile.type+"<br>";
+		document.getElementById("status").innerHTML=message;
+		
+		reader.readAsDataURL(selectedFile);
+	}
+	//http://www.freeformatter.com/mime-types-list.html
+}
+
+function loadendHandler()
+{
+	document.getElementById("preview").src=reader.result;
+	document.getElementById("preview").style.display="block";
+}
+
+</script>
+</head>
+
+<body>
+
+
+<div>
+	<input type="file" id="fileInput" value="" accept="image/jpeg,image/png">
+</div>
+<div id="status"></div>
+<img id="preview">
+<!--img src="images/connect_yes.png"-->
+
+
+</body>
+</html>

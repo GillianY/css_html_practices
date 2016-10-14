@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Drag and Drop Game</title>
+
+<style type="text/css">
+.moving{
+	border:5px solid red;
+	width:180px;
+	height:180px;
+	float:left;
+	text-align:center;
+}
+
+.srp{
+	border:1px solid black;
+	width:190px;
+	height:210px;
+	float:left;
+	text-align:center;
+}
+
+.srp img, .moving img{
+	width:180px;
+	height:180px;
+}
+
+.normal{
+	border:none;
+}
+.over{
+	border:5px dotted gray;
+}
+</style>
+
+<script>
+
+var dragSupport;
+var messageObj;
+var darggingElement;
+var winners ={Rock:"Paper",Paper:"Scissors",Scissors:"Rock"};
+
+function isDragEnabled()
+{
+    if("draggable" in document.createElement("span"))
+    {
+        return true;
+    }
+    return false;
+}
+
+window.addEventListener("load", init);
+function init()
+{
+    messageObj = document.getElementsByClassName("message")[0];
+    
+    if(dragSupport = isDragEnabled())
+    {
+        messageObj.innerHTML = "Drag and drop support.";
+		//write code here
+		
+    }
+    else
+    {
+        messageObj.innerHTML = "Drag and drop not support.";
+    }
+}
+/*write code here*/
+function dragstartHandler(e)
+{
+    
+}
+
+function dragendHandler(e)
+{
+   
+}
+
+function dragenterHandler(e)
+{
+   
+}
+
+function dragoverHandler(e)
+{
+    e.preventDefault();
+}
+
+function dragleaveHandler(e)
+{
+    
+}
+
+function dropHandler(e)
+{
+ 
+}
+
+function checkWinner(dragging,dropping){
+   
+}
+
+</script>
+</head>
+
+<body>
+
+<div id="gameContainer">
+	<h1>Scissors, Rock and Paper game</h1>
+    <p class="message">Game Start!!!</p>
+    <div id="gameArea">
+    	<div id="srp1" class="srp">
+        	<img src="images/Scissors.png" draggable="true" name="Scissors">
+            <footer>Scissors</footer>
+        </div>
+        <div id="srp2" class="srp">
+        	<img src="images/Rock.png" draggable="true" name="Rock">
+            <footer>Rock</footer>
+        </div>
+        <div id="srp3" class="srp">
+        	<img src="images/Paper.png" draggable="true" name="Paper">
+            <footer>Paper</footer>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

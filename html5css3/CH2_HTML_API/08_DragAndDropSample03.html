@@ -1,0 +1,119 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Drag and Drop Game</title>
+
+<style>
+.srp{
+	border:1px solid black;
+	width:180px;
+	height:180px;
+	float:left;
+	text-align:center;
+}
+
+.srp img{
+	width:150px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+var dragSupport;
+var messageObj;
+
+function isDragEnabled()
+{
+	if("draggable" in document.createElement("span"))
+	{
+		return true;
+	}
+	return false;
+}
+
+window.addEventListener("load", init);
+function init()
+{
+	messageObj = document.getElementsByClassName("message")[0];
+	
+	if(isDragEnabled())
+	{
+		//alert("YES!");
+		messageObj.innerHTML = "Drag and drop support.";
+		
+		var dragItem = document.getElementById("dragImage");
+		dragItem.addEventListener("dragstart", dragstartHandler);
+		dragItem.addEventListener("dragend", dragendHandler);
+		
+		var dropItem = document.getElementById("dropZone");
+		dropItem.addEventListener("dragenter", dragenterHandler);
+		dropItem.addEventListener("dragover", dragoverHandler);
+		dropItem.addEventListener("drop", dropHandler);
+	}
+	else
+	{
+		//alert("NO!");
+		messageObj.innerHTML = "Drag and drop not support.";
+	}
+}
+
+
+function dragstartHandler(e)
+{
+	messageObj.innerHTML = "Drag start!";
+	/*write code here*/
+	
+}
+
+
+function dragendHandler(e)
+{
+	messageObj.innerHTML = "Drag end!";
+}
+
+
+function dragenterHandler(e)
+{
+	messageObj.innerHTML = "Drag enter!";
+}
+
+
+function dragoverHandler(e)
+{
+	messageObj.innerHTML = "Drag over!";
+	e.preventDefault();
+}
+
+
+function dropHandler(e)
+{
+	messageObj.innerHTML = "Drop!";
+	/*write code here*/
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="gameContainer">
+	<h1>Scissors, Rock and Paper game</h1>
+    <p class="message">Game Start!!!</p>
+    <div id="gameArea">
+    	<div id="srp1" class="srp">
+        	<img id="dragImage" src="images/Scissors.png" draggable="true">
+            <footer>Scissors</footer>
+        </div>
+        <div class="srp">
+            <img id="dropZone" src="images/DropZone.png" draggable="false">
+            <footer>Drop Here!!!</footer>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

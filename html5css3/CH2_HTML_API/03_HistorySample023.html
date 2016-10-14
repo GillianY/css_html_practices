@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>History</title>
+<style>
+a{
+	text-decoration:none;
+	padding:5px;
+}
+
+a:hover{
+	background:red;
+	color:white;
+}
+</style>
+
+<script type="text/javascript">
+
+var data = {User1:{name:"anistar", age:21, img:"icon01.jpg"}, 
+			User2:{name:"john", age:22, img:"icon02.jpg"}, 
+			User3:{name:"mary", age:23, img:"icon03.jpg"}, 
+			User4:{name:"kitty", age:24, img:"icon04.jpg"}};
+
+window.addEventListener("load", init);
+function init()
+{
+	if(history.pushState)
+	{
+		document.getElementById("status").innerHTML = "HTML5 History API available";
+	}
+	document.getElementById("examples").addEventListener("click", clickHandler);
+	//按鈕行為註冊
+	document.getElementById("backBtn").addEventListener("click",backHandler);
+	document.getElementById("forwardBtn").addEventListener("click",forwardHandler);
+}
+function backHandler()
+{
+	//history.back();
+	history.go(-2);
+}
+
+function forwardHandler()
+{
+	//history.forward();
+	history.go(2);
+}
+
+function clickHandler(e)
+{
+	e.preventDefault();
+	if(e.target.nodeName == "A")
+	{
+		var title = e.target.innerHTML;
+		var url = e.target.getAttribute("href");
+		history.pushState(data[title], title, url);
+		//歷史紀錄更新
+		updateHistory();
+	}
+}
+
+//歷史紀錄更新
+function updateHistory()
+{
+	if(history.state){
+		var message =history.state.name+":"+history.state.age+":"+history.state.img;
+		document.getElementById("output").innerHTML=message;
+		document.getElementById("myImg").src="images/"+history.state.img;
+	}else{
+		document.getElementById("output").innerHTML="No data!";
+	}
+}
+window.addEventListener("popstate",popstateHandler);
+function popstateHandler()
+{
+	updateHistory();
+}
+
+</script>
+
+</head>
+
+<body>
+
+<article>
+  <p id="status">HTML5 History API not supported</p>
+  <p>Use the back and forward buttons in your browser to navigate the history.</p>
+  <ul id="examples">
+    <li><a href="first">User1</a></li>
+    <li><a href="second">User2</a></li>
+    <li><a href="third">User3</a></li>
+    <li><a href="fourth">User4</a></li>
+  </ul>
+  <div id="output"></div>
+</article>
+
+<input type="button" id="backBtn" value="Back">
+<input type="button" id="forwardBtn" value="Forward">
+<img src="" id="myImg">
+</body>
+</html>

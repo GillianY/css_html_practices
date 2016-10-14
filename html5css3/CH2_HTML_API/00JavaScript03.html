@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+		#outer{
+			border:1px solid gray;
+			background:silver;
+			width:200px;
+			height:200px;
+		}
+		#inner{
+			border:1px solid black;
+			background:pink;
+			width:100px;
+			height:100px;
+			margin:34px 50px;
+		}
+    </style>
+<script>
+/*event flow : capture target bubble*/
+	//window.onload=init;
+	window.addEventListener("load",init);
+	function init(){
+		document.getElementById("outer").addEventListener("click",outerHandler,false);
+		document.getElementById("inner").addEventListener("click",innerHandler);
+		document.getElementById("inner").addEventListener("click",innerAgainHandler);
+	}
+	
+	function outerHandler(e){
+		console.log("outer: this="+this.id+" target="+e.target.id+ " currentTarget:"+e.currentTarget.id);
+	}
+	function innerHandler(e){
+		console.log("inner: this="+this.id+" target="+e.target.id+ " currentTarget:"+e.currentTarget.id);
+		//e.stopPropagation();
+		//e.stopImmediatePropagation();
+	}
+	function innerAgainHandler(e){
+		console.log("innerAgainHandler");
+	}
+	
+</script>
+</head>
+
+<body>
+    <div id="outer">Outer
+    	<div id="inner">Inner</div>
+    </div>
+</body>
+</html>

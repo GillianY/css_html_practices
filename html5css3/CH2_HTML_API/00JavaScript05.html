@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+    </style>
+<script>
+var ar=["apple","orange",99];
+var obj={a:"apple","b":"orange",c:99,d:function (){alert("d!!!")}};
+
+document.write("ar="+typeof(ar)+"<br>");
+document.write("obj="+typeof(obj)+"<br>");
+
+document.write("ar="+ar+"<br>");
+document.write("obj="+obj+"<br>");
+document.write("ar[0]="+ar[0]+"<br>");
+document.write("ar['0']="+ar['0']+"<br>");
+document.write("obj.a="+obj.a+"<br>");
+document.write("obj.b="+obj.b+"<br>");
+document.write("obj[b]="+obj["b"]+"<br>");
+
+var alt="b";
+document.write("obj[b]="+obj[alt]+"<br>");
+
+for (var i in obj){
+	document.write(typeof(i));
+	document.write(" "+i+":"+obj[i]+"<br>");
+}
+//alert(obj.d);
+//obj.d();
+
+document.write("<hr>"+"<br>");
+var str="my string";
+document.write("str="+str+"<br>");
+document.write("str="+window.str+"<br>");
+document.write("str="+window["str"]+"<br>");
+document.write("str="+window["s"+"t"+"r"]+"<br>");
+var myFun = function (){alert("myFun")};
+//myFun();
+//window.myFun();
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
