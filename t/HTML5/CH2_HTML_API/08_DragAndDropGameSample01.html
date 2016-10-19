@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Drag and Drop Game</title>
+
+<style type="text/css">
+.moving{
+	border:5px solid red;
+	width:180px;
+	height:180px;
+	float:left;
+	text-align:center;
+}
+
+.srp{
+	border:1px solid black;
+	width:190px;
+	height:210px;
+	float:left;
+	text-align:center;
+}
+
+.srp img, .moving img{
+	width:180px;
+	height:180px;
+}
+
+.normal{
+	border:none;
+}
+.over{
+	border:5px dotted gray;
+}
+</style>
+
+<script src="../jquery.js"></script>
+<script>
+var dragSupport;
+var messageObj;
+var darggingElement;
+var winners ={Rock:"Paper",Paper:"Scissors",Scissors:"Rock"};
+
+function isDragEnabled()
+{
+    if("draggable" in document.createElement("span"))
+    {
+        return true;
+    }
+    return false;
+}
+
+window.addEventListener("load", init);
+function init()
+{
+    messageObj = document.getElementsByClassName("message")[0];
+    if(dragSupport = isDragEnabled())
+    {
+        messageObj.innerHTML = "Drag and drop support.";
+		var elements = document.getElementsByTagName("img");
+		for (var i=0; i<elements.length; i++){
+			elements[i].addEventListener("dragstart", dragstartHandler);
+			elements[i].addEventListener("dragend", dragendHandler);
+			elements[i].addEventListener("dragover", dragoverHandler);
+			elements[i].addEventListener("dragenter", dragenterHandler);
+			elements[i].addEventListener("dragleave", dragleaveHandler);
+			elements[i].addEventListener("drop", dropHandler);
+		}
+    }
+    else
+    {
+        messageObj.innerHTML = "Drag and drop not support.";
+    }
+}
+
+function dragstartHandler(e)
+{
+	this.className="moving";
+	this.style.opacity=0.4;
+	e.dataTransfer.setDragImage(this,100,100);
+	draggingElement=this;// img scissors
+	messageObj.innerHTML="Drag:"+this.getAttribute("name");//"Scissors"
+}
+
+function dragendHandler(e)
+{
+   this.style.opacity=1;
+   draggingElement=null;//取消dragStart時的拖曳元件設定
+}
+
+function dragenterHandler(e)
+{
+	this.className="over";
+}
+
+function dragoverHandler(e)
+{
+    e.preventDefault();
+}
+
+function dragleaveHandler(e)
+{
+	this.className="normal";
+}
+
+function dropHandler(e)
+{
+	e.preventDefault();
+	this.className="normal";
+	checkWinner(draggingElement,this);
+}
+//var winners ={Rock:"Paper",Paper:"Scissors",Scissors:"Rock"};
+function checkWinner(dragging,dropping){
+   var dragType = dragging.getAttribute("name");
+   var dropType = dropping.getAttribute("name");
+   //alert(dragType+"/"+dropType);
+	if (dragType == dropType){
+		messageObj.innerHTML=dragType + " / " + dropType +" are Tie";
+		return;
+	}
+	if (dragType == winners[dropType]){
+	   messageObj.innerHTML=dragType + " Win / " + dropType +" Lose";
+	}else{
+	   messageObj.innerHTML=dragType + " Lose / " + dropType +" Win";
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="gameContainer">
+	<h1>Scissors, Rock and Paper game</h1>
+    <p class="message">Game Start!!!</p>
+    <div id="gameArea">
+    	<div id="srp1" class="srp">
+        	<img src="images/Scissors.png" draggable="true" name="Scissors">
+            <footer>Scissors</footer>
+        </div>
+        <div id="srp2" class="srp">
+        	<img src="images/Rock.png" draggable="true" name="Rock">
+            <footer>Rock</footer>
+        </div>
+        <div id="srp3" class="srp">
+        	<img src="images/Paper.png" draggable="true" name="Paper">
+            <footer>Paper</footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

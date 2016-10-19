@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Offline Application</title>
+    <style type="text/css">
+        .offline {
+            padding: 5px;
+            background: red;
+            color: white;
+        }
+
+        .online {
+            padding: 5px;
+            background: green;
+            color: white;
+        }
+    </style>
+    <script>
+        //init事件註冊
+        window.addEventListener("load", init);
+
+        function init() {
+            //檢查有無支援navigator.onLine
+			if(navigator.onLine!=undefined){
+				document.getElementById("check").addEventListener("click",checkHandler);
+			}else{
+				alert("Not support onLine check!");
+			}
+        }
+
+        //偵測連線狀態
+        function checkHandler() {
+			var status = navigator.onLine;
+			if(status){
+				document.getElementById("status").innerHTML="On Line!!";
+				document.getElementById("status").className="online";
+			}else{
+				document.getElementById("status").innerHTML="Off Line!!";
+				document.getElementById("status").className="offline";
+			}
+        }
+
+    </script>
+</head>
+<body>
+
+<span id="status" class="offline">Unknow</span>
+<button id="check">Check Connection</button>
+
+</body>
+</html>

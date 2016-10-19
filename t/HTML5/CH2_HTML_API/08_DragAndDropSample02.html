@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Drag and Drop Game</title>
+
+<style>
+.srp{
+	border:1px solid black;
+	width:180px;
+	height:180px;
+	float:left;
+	text-align:center;
+}
+
+.srp img{
+	width:150px;
+}
+</style>
+
+<script type="text/javascript">
+var dragSupport;
+var messageObj;
+
+function isDragEnabled()
+{
+	if("draggable" in document.createElement("span"))
+	{
+		return true;
+	}
+	return false;
+}
+
+window.addEventListener("load", init);
+function init()
+{
+	messageObj = document.getElementsByClassName("message")[0];
+	
+	if(isDragEnabled())
+	{
+		messageObj.innerHTML = "Drag and drop support.";
+		//拖曳相關事件註冊
+		var dragItem = document.getElementById("dragImage");
+		dragItem.addEventListener("dragstart",dragstartHandler);
+		dragItem.addEventListener("drag",dragHandler);
+		dragItem.addEventListener("dragend",dragendHandler);
+		
+		var dorpItem = document.getElementById("dropZone");
+		dorpItem.addEventListener("dragenter",dragenterHandler);
+		dorpItem.addEventListener("dragover",dragoverHandler);
+		dorpItem.addEventListener("dragleave",dragleaveHandler);
+		dorpItem.addEventListener("drop",dropHandler);
+	}
+	else
+	{
+		messageObj.innerHTML = "Drag and drop not support.";
+	}
+}
+function dragstartHandler(){
+	messageObj.innerHTML="";
+	messageObj.innerHTML += " dragstart";
+}
+function dragHandler(){
+	//messageObj.innerHTML += " drag";
+}
+function dragendHandler(){
+	messageObj.innerHTML += " dragend";
+}
+function dragenterHandler(){
+	messageObj.innerHTML += " dragenter";
+}
+function dragoverHandler(e){
+	//messageObj.innerHTML += " dragover";
+	e.preventDefault();
+}
+function dragleaveHandler(){
+	messageObj.innerHTML += " dragleave";
+}
+function dropHandler(e){
+	messageObj.innerHTML += " drop";
+	e.preventDefault();
+}
+</script>
+</head>
+
+<body>
+<div id="gameContainer">
+	<h1>Scissors, Rock and Paper game</h1>
+    <div id="gameArea">
+    	<div id="srp1" class="srp">
+        	<img id="dragImage" src="images/Scissors.png" draggable="true">
+            <footer>Scissors</footer>
+        </div>
+        <div class="srp">
+            <img id="dropZone" src="images/DropZone.png" draggable="false">
+            <footer>Drop Here!!!</footer>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p class="message">Game Start!!!</p>
+
+</body>
+</html>

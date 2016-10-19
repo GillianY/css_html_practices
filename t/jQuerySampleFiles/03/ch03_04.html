@@ -21,9 +21,10 @@
 
     <script type="text/javascript" src="../jquery.js"></script>
 	<script type="text/javascript">
-	$(document).ready(init);
+	$(window).load(init);
 	function init()
 	{
+		alert("init");
 		$("#btn1").click(btn1Handler);
 		$("#btn2").click(btn2Handler);
 		$("#btn3").click(btn3Handler);
@@ -41,7 +42,9 @@
 	function btn3Handler(){
 		var str = $(".myInput").val();
 		//alert(str);
-		$(".myInput").val("abc");
+		 //$(".myInput").val("abc");
+		 $(".myDiv1").text(str);
+		 $(".myDiv2").html(str);
 	}
 	</script>  
 </head>

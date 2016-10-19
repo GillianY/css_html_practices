@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Pseudo</title>
+<style>
+#subscribe{
+	width:400px;
+	height:220px;
+	background:#FC6;
+	padding:20px;
+}
+
+#subscribe h1{
+	margin:0;
+}
+
+/*write code here*/
+input[type="text"]{
+	width:250px;
+	border:none;
+	border-bottom:1px dashed gray;
+	background:#eee;
+}
+#email:enabled{
+	border:3px dashed green;
+}
+#email:disabled{
+	border:3px dashed red;
+	color:gray;
+	background:#666;
+}
+#agree:checked{
+	margin-right:10px;
+}
+</style>
+<script>
+window.addEventListener("load", init);
+function init()
+{
+	document.getElementById("agree").addEventListener("change",changeHandler);
+}
+
+function changeHandler(e)
+{
+	if (e.target.checked){
+		document.getElementById("email").disabled=false;
+	}else{
+		document.getElementById("email").disabled=true;
+	}
+}
+
+
+</script>
+</head>
+
+<body>
+
+<div id="subscribe">
+	<h1>personal information</h1>
+    <p>
+    	<label>Name</label>
+        <input id="name" name="name" type="text">
+    </p>
+    <p>
+    	<label>Phone</label>
+        <input id="phone" name="phone" type="text">
+    </p>
+    <p>
+    	<input id="agree" name="agree" type="checkbox" value="subscribe" checked>
+        Please send me monthly discounts!
+    </p>
+    <p>
+    	<label>Email</label>
+        <input id="email" name="email" type="text">
+    </p>
+</div>
+
+</body>
+</html>

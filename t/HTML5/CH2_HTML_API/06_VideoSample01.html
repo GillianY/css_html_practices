@@ -1,0 +1,137 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video Player</title>
+
+<style>
+#videoPlayer{
+	background:#CCC;
+	padding:10px;
+	border:1px solid #666;
+	box-shadow:5px 5px 5px #666;
+	margin-bottom:10px;
+}
+
+#fullscreenButton{
+	background:red;
+	color:white;
+}
+
+</style>
+<script>
+var video = undefined;
+window.addEventListener("load", init);
+function init()
+{
+	document.getElementById("playButton").addEventListener("click", playHandler);
+	document.getElementById("pauseButton").addEventListener("click", pauseHandler);
+	document.getElementById("volumeUpButton").addEventListener("click", volumeUpHandler);
+	document.getElementById("volumeDownButton").addEventListener("click", volumeDownHandler);
+	
+	//video 事件註冊
+	video = document.getElementById("videoPlayer");
+	
+	video.addEventListener("play",startPlayHandler);
+	video.addEventListener("timeupdate",timeupdateHandler);
+	video.addEventListener("ended",endedHandler);
+	
+	document.getElementById("fullscreenButton").addEventListener("click", fullscreenHandler);
+}
+
+function startPlayHandler(){
+	document.getElementById("status").innerHTML="Start play!";
+}
+function timeupdateHandler(){
+	document.getElementById("status").innerHTML="Time:"+converter(video.currentTime)+" Druation:"+converter(video.duration);
+}
+function converter(timeInput){
+	var mins=Math.floor(timeInput/60);
+    var secs= Math.floor(timeInput%60);
+	//secs = secs<10 ? "0"+secs:secs;
+	if(secs<10 ) secs="0"+secs;
+	return mins +":"+secs;
+}
+function endedHandler(){
+	document.getElementById("status").innerHTML="Ended!";
+}
+
+//播放
+function playHandler()
+{
+	video.play();
+}
+//暫停
+function pauseHandler()
+{
+	video.pause();
+}
+//加音量
+function volumeUpHandler()
+{
+	video.volume+=0.1;
+}
+//減音量
+function volumeDownHandler()
+{
+		video.volume-=0.1;
+}
+//播放開始
+function startPlayHandler()
+{
+	
+}
+//播放歷程
+function timeUpdateHandler()
+{
+	
+}
+//播放結束
+function endedHandler()
+{
+	
+}
+//全螢幕
+function fullscreenHandler(e)
+{
+	if(video.webkitEnterFullscreen){
+		video.webkitEnterFullscreen();//webkit 
+	}else if(video.mozRequestFullScreen) {
+		video.mozRequestFullScreen();//mozilla
+	}else if(video.msRequestFullscreen) {
+		video.msRequestFullscreen();//ie
+	}else {
+        alert("Fullscreen API is not supported");
+	} 
+	//requestFullscreen();//沒有prefix的標準使用
+	//msRequestFullscreen();//ms =>ie
+	//mozRequestFullScreen();//mozilla =>firefox
+	//webkitRequestFullscreen();//webkit =>chrome safari
+	//o =>opera
+	
+}
+</script>
+
+</head>
+
+<body>
+ 	<!--controls autoplay loop muted width="300" height="500"-->
+   <video id="videoPlayer" controls  muted poster="images/icon03.jpg">
+    	<source src="images/test.mp4" type="video/mp4">
+    	Your browser does not support the video tag!
+    </video>
+
+
+<div>
+	<input type="button" id="playButton" value="Play">
+	<input type="button" id="pauseButton" value="Pause">
+    <input type="button" id="volumeUpButton" value="+">
+	<input type="button" id="volumeDownButton" value="-">
+    <input type="button" id="fullscreenButton" value="Full Screen">
+</div>
+
+<div id="status">Information</div>
+<div id="screenStatus"></div>
+
+</body>
+</html>

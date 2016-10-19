@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GeoLocation</title>
+<script type="text/javascript">
+var geo;
+
+window.addEventListener("load", init);
+
+function init()
+{
+	if(geo = getGeoLocation())
+	{
+		// alert("YES");
+		document.getElementById("title").innerHTML = "Geolocation is supported.";
+		/*write code here*/
+		//geo.getCurrentPosition(showCoords);
+		geo.watchPosition(showCoords,errorHandler,{timeout:30000,maximumAge:10000});
+	}
+	else
+	{
+		// alert("NO");
+		document.getElementById("title").innerHTML = "Geolocation is not supported.";
+	}
+}
+
+function getGeoLocation()
+{
+		if(navigator.geolocation)
+		{
+			return navigator.geolocation;
+		}
+		else
+		{
+			return undefined;
+		}
+}
+
+function showCoords(position)
+{
+
+	var lat = position.coords.latitude;
+	var lon = position.coords.longitude;
+
+	document.getElementById("latitude").innerHTML = lat.toString();
+	document.getElementById("longitude").innerHTML = lon.toString();
+	window.open("http://maps.google.com/maps?q="+lat+","+lon,"_self");
+}
+
+function errorHandler(error)
+{
+	/*write code here*/
+	switch(error.code){
+		case error.TIMEOUT:
+			alert("TIMEOUT");
+			break;
+		case error.POSITION_UNAVAILABLE:
+			alert("POSITION_UNAVAILABLE");
+			break;
+		case error.PERMISSION_DENIED:
+			alert("PERMISSION_DENIED");
+			break;
+		default:
+			alert(error.code);
+	}
+}
+</script>
+
+</head>
+
+<body>
+	<h1 id="title">GEO Location Sample.</h1>
+    <table>
+    	<tr>
+        	<th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+        <tr>
+        	<td id="latitude"></td>
+            <td id="longitude"></td>
+        </tr>
+    </table>
+</body>
+</html>

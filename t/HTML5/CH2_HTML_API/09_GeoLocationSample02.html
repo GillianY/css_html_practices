@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GeoLocation</title>
+<script type="text/javascript">
+var geo;
+
+window.addEventListener("load", init);
+
+function init()
+{
+    if(geo = navigator.geolocation)
+    {
+        document.getElementById("title").innerHTML = "Support"; 
+		geo.getCurrentPosition(showCoords);
+    }
+    else
+    {
+        document.getElementById("title").innerHTML = "Not Support"; 
+    }
+}
+
+/*write code here*/
+function showCoords(e)
+{
+    var lat = e.coords.latitude;//緯
+	var lon = e.coords.longitude;//經
+	document.getElementById("latitude").innerHTML=lat.toString();
+	document.getElementById("longitude").innerHTML=lon.toString();
+}
+
+</script>
+
+</head>
+
+<body>
+	<h1 id="title">GEO Location Sample.</h1>
+	    <table>
+    	<tr>
+        	<th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+        <tr>
+        	<td id="latitude"></td>
+            <td id="longitude"></td>
+        </tr>
+    </table>
+</body>
+</html>

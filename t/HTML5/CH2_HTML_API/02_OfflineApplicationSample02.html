@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML>
+<html manifest="Sample.manifest">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Offline Application</title>
+    <style type="text/css">
+        .offline {
+            padding: 5px;
+            background: red;
+            color: white;
+        }
+
+        .online {
+            padding: 5px;
+            background: green;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        window.addEventListener("load", init);
+        function init() {
+            document.getElementById("check").addEventListener("click", checkHandler);
+            //自動偵測window連線狀態
+			window.addEventListener("online",onlineHandler);
+			window.addEventListener("offline",offlineHandler);
+        }
+
+        //連線
+        function onlineHandler() {
+			alert("On line!");
+			checkHandler();
+        }
+
+        //離線
+        function offlineHandler() {
+			alert("Off line!");
+			checkHandler();
+        }
+
+        //偵測連線狀態
+        function checkHandler() {
+            var status = navigator.onLine;
+            if (status) {
+                document.getElementById("status").className = "online";
+                document.getElementById("status").innerHTML = "Online";
+            }
+            else {
+                document.getElementById("status").className = "offline";
+                document.getElementById("status").innerHTML = "Offline";
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<span id="status" class="offline">Unknow</span>
+<button id="check">Check Connection</button>
+
+</body>
+</html>

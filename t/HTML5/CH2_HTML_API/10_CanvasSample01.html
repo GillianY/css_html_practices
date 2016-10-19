@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Canvas</title>
+    <script>
+        window.addEventListener("load", init);
+        function init() {
+            var image=new Image();
+			image.addEventListener("load",loadCompleteHandler);
+			image.src="images/magicLapse_banner.jpg";
+        }
+
+        function loadCompleteHandler() {
+			var canvas = document.getElementById("banner");
+			var ctx=canvas.getContext("2d");
+			ctx.drawImage(this,0,0);
+			
+			ctx.strokeStyle = "lightgreen";
+			ctx.lineWidth = 20;
+			ctx.lineJoin="round";//miter bevel round	
+			
+			ctx.beginPath();
+			ctx.moveTo(300,100);
+			ctx.lineTo(300,200);
+			ctx.lineTo(800,200);
+			ctx.stroke();
+        }
+    </script>
+</head>
+<body>
+
+<canvas id="banner" width="910" height="425">
+Your browser does not support canvas. Please upgrade to the lastest version of Chrome, Firefox or Safari.
+</canvas>
+
+</body>
+</html>

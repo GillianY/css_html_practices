@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+	table{
+		border:2px solid black;
+	}
+	td{
+		border:1px solid gray;
+	}
+    </style>
+<script>
+	window.addEventListener("load",init);
+	function init(){
+	}
+</script>
+</head>
+
+<body>
+    <div contenteditable="true">Div</div>
+    
+    <table contenteditable="false">
+    	<tr>
+        	<td>ID</td>
+        	<td>Name</td>
+        </tr>
+    	<tr>
+        	<td>1</td>
+        	<td contenteditable="true">Tom</td>
+        </tr>
+    	<tr>
+        	<td>2</td>
+        	<td contenteditable="true">Carol</td>
+        </tr>
+    </table>
+</body>
+</html>

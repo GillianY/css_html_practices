@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+    </style>
+<script>
+var n1=5;
+var n2=5;
+//var n2 = n1;
+document.write("n1="+n1+"<br>");
+document.write("n2="+n2+"<br>");
+document.write("n1==n2: "+(n1==n2)+"<br>");
+n2=8;
+document.write("n1="+n1+"<br>");
+document.write("n2="+n2+"<br>");
+
+
+var ar1=["a","b"];
+//var ar2=["a","b"];
+//var ar2=ar1;
+var ar2=ar1.slice(0,ar1.length);
+document.write("ar1="+ar1+"<br>");
+document.write("ar2="+ar2+"<br>");
+document.write("ar1==ar2: "+(ar1==ar2)+"<br>");
+ar2[1]="c";
+document.write("ar1="+ar1+"<br>");
+document.write("ar2="+ar2+"<br>");
+
+//slice(2,4);//slice(起始號碼 包含,結束號碼 不包含)
+//splice(1,2);//ar.splice(起始號碼,刪除長度);
+
+</script>
+</head>
+<body>
+</body>
+</html>

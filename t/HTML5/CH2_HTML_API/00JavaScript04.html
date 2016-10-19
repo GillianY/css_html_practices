@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+		#outer{
+			border:1px solid gray;
+			background:silver;
+			width:200px;
+			height:200px;
+		}
+		#inner{
+			border:1px solid black;
+			background:pink;
+			width:100px;
+			height:100px;
+			margin:34px 50px;
+		}
+    </style>
+<script>
+/*event flow : capture target bubble*/
+	//window.onload=init;
+	window.addEventListener("load",init);
+	function init(){
+		//document.getElementById("myId1").addEventListener("click",clickHandler);
+		var btn=document.getElementById("myId1");//$("#myId1")
+		var btn=document.getElementsByClassName("myClass");//$(".myClass")
+		var btn=document.getElementsByTagName("button");//$("button")
+		var btn=document.getElementsByName("myName");//$("[name='myName']")
+		
+	
+		console.log("btn="+btn);
+		for (var i=0; i< btn.length; i++){
+			btn[i].addEventListener("click",clickHandler);
+		}
+	}
+	
+	function clickHandler(e){
+		console.log("value="+this.value);
+	}
+	
+</script>
+</head>
+
+<body>
+	<button id="myId1" value="btn1" class="myClass">btn1</button>
+	<button id="myId2" value="btn2" class="myClass" name="myName">btn2</button>
+	<button id="myId3" value="btn3" name="myName">btn3</button>
+</body>
+</html>

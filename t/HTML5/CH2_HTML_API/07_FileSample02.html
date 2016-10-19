@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Drop & File</title>
+
+<style>
+#dropBox{
+	width:100px;
+	background:#EEE;
+	padding:10px;
+	border:1px solid #333;
+}
+
+img{
+	width:100%;
+}
+</style>
+
+<script>
+var dropbox = undefined;
+var reader = undefined;
+var image;
+window.addEventListener("load", init);
+
+function init()
+{
+	dropbox=document.getElementById("dropBox");
+	//拖曳事件
+	dropbox.addEventListener("dragover",dragoverHandler);
+	//放下事件
+	dropbox.addEventListener("drop",dropHandler);
+}
+
+function dragoverHandler(e)
+{
+	//console.log("dragover");
+	e.preventDefault();//一定要寫。否則drop無法觸發
+}
+
+function dropHandler(e)
+{
+	//console.log("drop");
+	e.preventDefault();
+	var file = e.dataTransfer.files[0];
+	var fileType=file.type;//image/png  image/jpeg   text/html
+	if(fileType.indexOf("image")== -1){
+		alert("Only accept image file!");
+		return;
+	}
+	image = document.createElement("img");
+	reader=new FileReader();
+	reader.addEventListener("load",loadendHandler);
+	reader.readAsDataURL(file);
+}
+//讀檔完畢
+function loadendHandler()
+{
+	dropbox.innerHTML="";
+	image.src=reader.result;
+	dropbox.appendChild(image);
+}
+
+</script>
+
+</head>
+
+<body>
+<div id="dropBox">Drop image to here.</div>
+</body>
+
+</html>
+

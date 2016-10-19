@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<style>
+	body{
+		font-size:3em;
+	}
+	
+	#main {
+		height: 300px;
+		margin: 0px;
+		padding: 0px;
+		display:flex;
+	}
+	#main > article,#main > nav,#main > aside, header, footer{
+		margin: 5px;
+		padding: 5px;
+		border: 1px solid black;
+		border-radius: 5pt;
+	}
+	#main > nav {
+		background-color: silver;
+		flex-grow:1;
+	}
+	#main > article {
+		background-color: lightblue;
+		flex-grow:3;
+	}
+	#main > aside {
+		background-color: silver;
+		flex-grow:1;
+	}
+	header, footer {
+		display: block;
+		height: 50px;
+		background-color: lightgreen;
+	}
+	
+	@media screen and (max-width: 500px) {
+		#main {
+			flex-direction:column;
+			color:red;
+		}
+	}
+	@media screen and (min-width: 501px) and (max-width: 800px) {
+		#main {
+			color:green;
+		}
+		#main > aside {
+			display:none;
+		}
+		nav{order:1}
+	}
+	@media screen and (min-width: 801px) {
+		#main {
+			color:blue;
+		}
+	}
+	
+
+</style>
+</head>
+<body>
+    <header>header</header>
+    <section id="main">
+        <nav>nav</nav>
+        <article>article</article>
+        <aside>aside</aside>
+    </section>
+    <footer>footer</footer>
+</body>
+</html>

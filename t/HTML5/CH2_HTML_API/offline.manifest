@@ -1,0 +1,17 @@
+CACHE MANIFEST
+#version 1.0
+
+#Offline
+CACHE:
+02_OfflineApplicationSample04.html
+images/connect_yes.png
+offline.html
+
+#online
+NETWORK:
+offline.css
+images/connect_no.png
+
+#error
+FALLBACK:
+game.html offline.html

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GeoLocation</title>
+<script>
+var geo = undefined;
+
+window.addEventListener("load", init);
+function init()
+{
+//判斷是否支援Geo Location
+	if(geo = getGeoLocation()){
+		document.getElementById("title").innerHTML="Geo support!";
+	}else{
+		document.getElementById("title").innerHTML="Geo NOT support!";
+	}
+}
+
+function getGeoLocation()
+{
+    if(navigator.geolocation){
+		return navigator.geolocation;
+	}else{
+		return undefined;
+	}
+}
+</script>
+</head>
+
+<body>
+	<h1 id="title">GEO Location Sample.</h1>
+</body>
+</html>

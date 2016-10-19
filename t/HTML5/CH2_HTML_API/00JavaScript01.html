@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+    </style>
+    <script>
+		window.onload=init;
+		function init(){
+			//alert("init");
+			//alert(document.getElementById("myBtn2"));
+			document.getElementById("myBtn2").onclick=clickHandler;
+		}
+		
+		function clickHandler(e){
+			//console.log("this="+this+" value="+this.value+" event="+e);
+			console.log(e);
+		}
+    </script>
+</head>
+
+<body>
+	<button value="myValue1" id="myBtn1" onClick="clickHandler()">myBtn1</button>
+	<button value="myValue2" id="myBtn2">myBtn2</button>
+</body>
+</html>
